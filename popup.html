@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!--
+MIT License
+Copyright (c) 2022 kazu86
+https://opensource.org/licenses/mit-license.php
+-->
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>popup</title>
+    <style>
+        body {
+          width: 450px;
+        }
+
+        div#register p{
+          display:inline;
+        }
+        div#register input[type=text]{
+          width:350px;
+        }
+        div#register *{
+          margin-top: 1px;
+          margin-bottom: 1px;
+        }
+
+    </style> 
+</head>
+
+<body>
+  <div id="register">
+    <h3>Register</h3>
+    <div>
+      <p>Label:</p>
+      <input type="text" id="reg_label" placeholder="label" maxlength=40 value="">
+    </div>
+    <div>
+      <p>IdList:</p>
+      <input type="text" id="reg_watcher_ids" placeholder="user ids seperated by commas" value="">
+    </div>
+    <input type="button" id="reg_watcher" value="add">
+  </div>
+  <hr>
+
+  <div id="delete">
+    <h3>Delete</h3>
+    <select id="watcher_hash_list_box" aria-label="watcher_hash_list_box"></select>
+    <input type="button" id="del_selected_watcher_button_0" value="del" >
+    <input type="button" id="del_all_watcher_button_0"      value="del all">
+    <div id="watcher_display"></div>
+  </div>
+  <hr>
+
+  <div id="order">
+    <h3>Adjust Display Order</h3>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+              <select id="display_order_list_box" aria-label="display_order_list_box" multiple="multiple" size=10></select>
+            </td>
+            <td class="button">
+              <input type="button" id="order_move_top" value="⇈"><br>
+              <input type="button" id="order_move_up" value="↑"><br>
+              <input type="button" id="order_move_down" value="↓"><br>
+              <input type="button" id="order_move_bottom" value="⇊"><br>
+            </tb>
+          </tr>
+        </tbody>
+      </table>
+    <p>
+      <input type="button" id="order_apply" value="apply">
+    </p>
+  </div>
+
+  <script src="popup.js"></script> 
+</body>
+
+</html>
