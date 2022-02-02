@@ -14,7 +14,12 @@ https://opensource.org/licenses/mit-license.php
         body {
           width: 450px;
         }
-
+        .my-button {
+          color: #0000EE;
+          text-decoration: underline;
+          font-size:120%;
+          margin:1rem 1rem 1rem 1rem;
+        }
         div#register p{
           display:inline;
         }
@@ -25,7 +30,20 @@ https://opensource.org/licenses/mit-license.php
           margin-top: 1px;
           margin-bottom: 1px;
         }
-
+        div#update_delete *{
+          margin-top: 1px;
+          margin-bottom: 1px;
+        }
+        div#update_delete input[type=text]{
+          width:350px;
+        }
+        div#export_import label{
+          display:inline;
+        }
+        div#export_import input{
+          opacity:0;
+          display:none;
+        }
     </style> 
 </head>
 
@@ -44,12 +62,17 @@ https://opensource.org/licenses/mit-license.php
   </div>
   <hr>
 
-  <div id="delete">
-    <h3>Delete</h3>
-    <select id="watcher_hash_list_box" aria-label="watcher_hash_list_box"></select>
-    <input type="button" id="del_selected_watcher_button_0" value="del" >
-    <input type="button" id="del_all_watcher_button_0"      value="del all">
-    <div id="watcher_display"></div>
+  <div id="update_delete">
+    <h3>Update/Delete</h3>
+    <div>
+      <select id="watcher_hash_list_box" aria-label="watcher_hash_list_box"></select>
+      <input type="button" id="del_selected_watcher_button_0" value="del" >
+      <input type="button" id="del_all_watcher_button_0"      value="del all">
+    </div>
+    <div>
+      <input type="text"   id="selected_watcher_ids"></input>
+      <input type="button" id="update_selected_watcher_button_0" value="update" >
+    </div>
   </div>
   <hr>
 
@@ -73,6 +96,17 @@ https://opensource.org/licenses/mit-license.php
     <p>
       <input type="button" id="order_apply" value="apply">
     </p>
+  </div>
+  <hr>
+
+  <div id="export_import">
+    <h3>Setting Export/Import</h3>
+    <div>
+      <label for="export_0" class="my-button">export</label>
+      <input type="button" id="export_0"></input>
+      <label for="import_0" class="my-button">import</label>
+      <input type="file" id="import_0" accept="application/JSON"></input>
+    </div>
   </div>
 
   <script src="popup.js"></script> 

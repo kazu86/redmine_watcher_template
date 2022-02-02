@@ -1,14 +1,20 @@
 {
     "manifest_version":3,
     "name":"Redmine Watcher Template",
-    "version":"1.0.0",
+    "version":"2.0.0",
     "description":"Add/Remove Redmine watchers by using template",
     "icons":{
         "128":"icon.png"
     },
     "content_scripts":[
         {
-            "matches":["*://*/issues/*","*://*/*/issues/new"],
+            "matches":["*://*/issues/*",
+                       "*://*/*/issues/*",
+                       "*://*/issues/new",
+                       "*://*/*/issues/new",
+                       "*://*/issues/new?*",
+                       "*://*/*/issues/new?*"
+                      ],
             "js":["jquery-3.6.0.min.js","content-scripts/contents.js"]
         }
     ],
