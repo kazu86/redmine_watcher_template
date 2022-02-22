@@ -337,7 +337,15 @@ document.getElementById("import_0").addEventListener('change',(event) => {
         (async (watchersHashArray) => {
             for(let i = 0; i < watchersHashArray.length;i++) {
                 let label = watchersHashArray[i]["label"];
-                let userIdsStr = watchersHashArray[i]["userIds"].join(",");
+                
+                //let userIdsStr = watchersHashArray[i]["userIds"].join(",");
+                let userIdsStr = "";
+                if ( Array.isArray(watchersHashArray[i]["userIds"]) ) { // Array
+                    userIdsStr = watchersHashArray[i]["userIds"].join(",");
+                } else { // String
+                    userIdsStr = watchersHashArray[i]["userIds"];
+                }
+
                 if ( checkTemplateFormat(label,userIdsStr) == false ) {
                     continue;
                 }
